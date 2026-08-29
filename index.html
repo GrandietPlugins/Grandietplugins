@@ -52,8 +52,15 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             letter-spacing: -0.5px;
+        }
+
+        .logo-img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .logo span {
@@ -83,7 +90,6 @@
         .hero {
             position: relative;
             min-height: 420px;
-            /* Pointing into website/images/ */
             background: linear-gradient(180deg, rgba(10,7,20,0.6) 0%, rgba(10,7,20,1) 100%),
                         url('website/images/images (2).jpeg') center/cover no-repeat;
             display: flex;
@@ -308,79 +314,5 @@
 <body>
 
     <nav>
-        <a href="#" class="logo"><span>Grandiet</span>Plugins</a>
-        <ul class="nav-links">
-            <li><a href="#plugins">Plugins</a></li>
-            <li><a href="#upcoming">Upcoming</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1><span>Grandiet</span> Plugins</h1>
-            <p>High-performance combat utilities and modern server enhancements.</p>
-            <a href="#crystal-guard" class="btn-primary">View Plugins</a>
-        </div>
-    </header>
-
-    <main class="container">
-        <h2 class="section-title" id="plugins">Featured Plugin</h2>
-
-        <div class="plugin-showcase" id="crystal-guard">
-            <div class="plugin-img-wrapper">
-                <img src="website/images/Gemini_Generated_Image_ik67feik67feik67.jpeg" alt="Crystal Guard Preview" class="plugin-banner-img">
-            </div>
-            <div class="plugin-details">
-                <h2>Crystal Guard</h2>
-                <p>Crystal Guard is an all-in-one combat engine featuring built-in AntiCheat and LagShield, crystal optimizer, fast crystals, fast XP, respawn anchors support, and custom crystal damage scaling.</p>
-                
-                <ul class="features-list">
-                    <li>Built-in Combat AntiCheat Protection</li>
-                    <li>LagShield TPS Protection & Blast Optimization</li>
-                    <li>Crystal Optimizer & Fast Crystals</li>
-                    <li>Respawn Anchors Support</li>
-                    <li>Fast XP Bottle Throwing & Damage Scaling</li>
-                </ul>
-
-                <div>
-                    <a href="Crystalguard-1.0.0.jar" download="Crystalguard-1.0.0.jar" class="btn-primary">Download Crystal Guard v1.0.0</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title" id="upcoming">Upcoming Plugin Suite</h2>
-        <div class="ideas-grid">
-            
-            <div class="idea-card">
-                <span class="idea-badge">Core Engine</span>
-                <h3>Grandiet Core</h3>
-                <p>Complete CPvP framework featuring ping-based knockback tuning, custom kit auto-restock, instant arena duels, and combat logging prevention.</p>
-            </div>
-
-            <div class="idea-card">
-                <span class="idea-badge">PvP Arenas</span>
-                <h3>Grandiet Practice</h3>
-                <p>Queue system for 1v1 CPvP duels, custom loadouts, instant map resetting, spectator mode, and real-time player ELO ratings.</p>
-            </div>
-
-            <div class="idea-card">
-                <span class="idea-badge">Economy / Rewards</span>
-                <h3>Grandiet Bounties</h3>
-                <p>Live bounty system with killstreak trackers, head rewards, broadcast alerts, and automated Vault/currency payouts for high-profile target kills.</p>
-            </div>
-
-            <div class="idea-card">
-                <span class="idea-badge">Loadouts</span>
-                <h3>Grandiet Kits</h3>
-                <p>Advanced GUI kit management featuring instant kit auto-fill, offhand totem priorities, custom cooldown timers, and permission-based kit tiers.</p>
-            </div>
-
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Grandiet Plugins. Not affiliated with Mojang Studios.</p>
-    </footer>
-
-</body>
-</html>
+        <a href="#" class="logo">
+            <img src="website/images/cglogo.png" alt="Crystal Guard Logo" class="logo
