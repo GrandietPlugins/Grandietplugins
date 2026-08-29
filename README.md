@@ -43,4 +43,5 @@ An all-in-one combat and performance engine engineered specifically for competit
 
 ## 📄 License
 
-All Grandiet Plugins projects are distributed under the MIT License. See `LICENSE` for details.
+© 2026 Grandiet Plugins. All Rights Reserved.  
+This project is closed-source. Unauthorized redistribution or modification of the source code or compiled `.jar` files is prohibited.
