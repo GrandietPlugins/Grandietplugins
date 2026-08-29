@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandiet Plugins — Essential Minecraft Server Solutions</title>
+    <style>
+        :root {
+            --bg-dark: #0a0714;
+            --bg-card: #130f24;
+            --bg-card-hover: #1c1636;
+            --border: #2d224d;
+            --accent-purple: #a855f7;
+            --accent-glow: #d8b4fe;
+            --gradient-accent: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            --text-main: #cbd5e1;
+            --text-heading: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: rgba(10, 7, 20, 0.85);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-glow);
+        }
+
+        /* Hero Banner */
+        .hero {
+            position: relative;
+            min-height: 420px;
+            /* Adjusted path to match website/images/ folder */
+            background: linear-gradient(180deg, rgba(10,7,20,0.6) 0%, rgba(10,7,20,1) 100%),
+                        url('../images/images (2).jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 0.75rem;
+            text-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--text-heading);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Featured Crystal Guard Card */
+        .plugin-showcase {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 3rem;
+        }
+
+        .plugin-showcase:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 35px rgba(168, 85, 247, 0.25);
+        }
+
+        @media (min-width: 768px) {
+            .plugin-showcase {
+                grid-template-columns: 42% 58%;
+            }
+        }
+
+        .plugin-img-wrapper {
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .plugin-img-wrapper {
+                height: 100%;
+                max-height: 380px;
+                border-bottom: none;
+                border-right: 1px solid var(--border);
+            }
+        }
+
+        .plugin-banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .plugin-showcase:hover .plugin-banner-img {
+            transform: scale(1.03);
+        }
+
+        .plugin-details {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .plugin-details h2 {
+            font-size: 1.8rem;
+            color: var(--text-heading);
+            margin-bottom: 0.75rem;
+        }
+
+        .plugin-details p {
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+            font-weight: bold;
+        }
+
+        /* Ideas Grid Layout */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .idea-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-purple);
+        }
+
+        .idea-badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            color: var(--accent-glow);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .idea-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-heading);
+            margin-bottom: 0.5rem;
+        }
+
+        .idea-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo"><span>Grandiet</span>Plugins</a>
+        <ul class="nav-links">
+            <li><a href="#plugins">Plugins</a></li>
+            <li><a href="#upcoming">Upcoming</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1><span>Grandiet</span> Plugins</h1>
+            <p>High-performance combat utilities and modern server enhancements.</p>
+            <a href="#crystal-guard" class="btn-primary">View Plugins</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title" id="plugins">Featured Plugin</h2>
+
+        <div class="plugin-showcase" id="crystal-guard">
+            <div class="plugin-img-wrapper">
+                <img src="../images/Gemini_Generated_Image_ik67feik67feik67.jpeg" alt="Crystal Guard Preview" class="plugin-banner-img">
+            </div>
+            <div class="plugin-details">
+                <h2>Crystal Guard</h2>
+                <p>Crystal Guard is an all-in-one combat engine featuring built-in AntiCheat and LagShield, crystal optimizer, fast crystals, fast XP, respawn anchors support, and custom crystal damage scaling.</p>
+                
+                <ul class="features-list">
+                    <li>Built-in Combat AntiCheat Protection</li>
+                    <li>LagShield TPS Protection & Blast Optimization</li>
+                    <li>Crystal Optimizer & Fast Crystals</li>
+                    <li>Respawn Anchors Support</li>
+                    <li>Fast XP Bottle Throwing & Damage Scaling</li>
+                </ul>
+
+                <div>
+                    <a href="Crystalguard-1.0.0.jar" download="Crystalguard-1.0.0.jar" class="btn-primary">Download Crystal Guard v1.0.0</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="upcoming">Upcoming Plugin Suite</h2>
+        <div class="ideas-grid">
+            
+            <div class="idea-card">
+                <span class="idea-badge">Core Engine</span>
+                <h3>Grandiet Core</h3>
+                <p>Complete CPvP framework featuring ping-based knockback tuning, custom kit auto-restock, instant arena duels, and combat logging prevention.</p>
+            </div>
+
+            <div class="idea-card">
+                <span class="idea-badge">PvP Arenas</span>
+                <h3>Grandiet Practice</h3>
+                <p>Queue system for 1v1 CPvP duels, custom loadouts, instant map resetting, spectator mode, and real-time player ELO ratings.</p>
+            </div>
+
+            <div class="idea-card">
+                <span class="idea-badge">Economy / Rewards</span>
+                <h3>Grandiet Bounties</h3>
+                <p>Live bounty system with killstreak trackers, head rewards, broadcast alerts, and automated Vault/currency payouts for high-profile target kills.</p>
+            </div>
+
+            <div class="idea-card">
+                <span class="idea-badge">Loadouts</span>
+                <h3>Grandiet Kits</h3>
+                <p>Advanced GUI kit management featuring instant kit auto-fill, offhand totem priorities, custom cooldown timers, and permission-based kit tiers.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Grandiet Plugins. Not affiliated with Mojang Studios.</p>
+    </footer>
+
+</body>
+</html>
